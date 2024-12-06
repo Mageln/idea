@@ -1,0 +1,10 @@
+extends:
+- react-app
+- ../.eslintrc.yml
+parserOptions:
+project: ./tsconfig.json
+overrides:
+- file:
+  -vite.config.ts
+  parserOptions:
+  project: ./tsconfing.node.json
