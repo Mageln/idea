@@ -10,6 +10,7 @@ const  ideas = [
     {nick:"cool-idea-nick-5", name:"Idea 5", description: "Description of idea 5..."},
   ]
 
+  
 
 
 const trpc = initTRPC.create()

@@ -6,7 +6,7 @@
   "scripts": {
     "dev": "vite",
     "build": "tsc -b && vite build",
-    "lint": "eslint .",
+    "lint": "eslint --cache --cache-location ./node_modules/.cache/.eslintcache --ext .ts,.tsx .",
     "preview": "vite preview",
     "prettify": "prettier --loglevel warn --cache '{src/**/*,*}.{ts,tsx,json,yml,scss}' !**/{node_modules,dist}/**/*",
      "types": "tsc --noEmit --project ./tsconfig.json && tsc --noEmit --project ./tsconfig.node.json"

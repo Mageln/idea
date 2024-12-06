@@ -7,7 +7,8 @@
         "f": "pnpm --filter @webapp/front",
         "dev": "pnpm -r --parallel dev",
         "types": "concurrently 'pnpm b types' 'pnpm f types'",
-        "prettify": "pnpm -r --parallel prettify"
+        "prettify": "pnpm -r --parallel prettify",
+        "lint": "concurrently 'pnpm b lint' 'pnpm f lint'"
     },
     "devDependencies": {
         "concurrently": "^9.1.0",
