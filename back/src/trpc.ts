@@ -11,7 +11,7 @@ const  ideas = [
   ]
 
   
-
+const x: number = "hello";
 
 const trpc = initTRPC.create()
 
