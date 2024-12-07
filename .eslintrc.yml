@@ -35,5 +35,3 @@ rules:
         - info
         - error
         - warn
-parserOptions:
-  project: ./tsconfig.json
