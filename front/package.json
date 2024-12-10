@@ -6,18 +6,24 @@
   "scripts": {
     "dev": "vite",
     "build": "tsc -b && vite build",
-    "lint": "eslint --cache --cache-location ./node_modules/.cache/.eslintcache --ext .ts,.tsx .",
+    "lint": "eslint --cache --cache-location ./node_modules/.cache/.eslintcache .",
     "preview": "vite preview",
     "prettify": "prettier --loglevel warn --cache '{src/**/*,*}.{ts,tsx,json,yml,scss}' !**/{node_modules,dist}/**/*",
-     "types": "tsc --noEmit --project ./tsconfig.json && tsc --noEmit --project ./tsconfig.node.json"
+    "types": "tsc --noEmit --project ./tsconfig.json && tsc --noEmit --project ./tsconfig.node.json"
   },
   "dependencies": {
+    "@csstools/normalize.css": "^12.1.1",
     "@tanstack/react-query": "^4.36.1",
     "@trpc/client": "^10.45.2",
     "@trpc/react-query": "^10.45.2",
     "@webapp/back": "workspace:*",
+    "include-media": "^2.0.0",
+    "postcss-normalize": "^13.0.1",
     "react": "^18.3.1",
-    "react-dom": "^18.3.1"
+    "react-dom": "^18.3.1",
+    "react-router-dom": "^7.0.2",
+    "reset-css": "^5.0.2",
+    "sass": "^1.82.0"
   },
   "devDependencies": {
     "@types/react": "^18.3.12",
