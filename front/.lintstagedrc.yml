@@ -1,4 +1,7 @@
 '*.{ts,tsx,js}':
-- "eslint --cache --cache-location ./node_modules/.cache/.eslintcache --fix"
--'prettier --loglevel warn --cache --write'
-'*.{json,yml,scss}': 'prettier --loglevel warn --cache --write'
+  - "eslint --cache --cache-location ./node_modules/.cache/eslintcache --fix "
+  - "prettier --log-level warn --cache --write --timeout 30000"
+'*.scss':
+  - 'stylelint --cache --cache-location ./node_modules/.cache/.stylelintcache'
+  - 'prettier --log-level warn --cache --write'
+'*.{json}': 'prettier --log-level warn --cache --write'

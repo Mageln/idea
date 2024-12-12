@@ -1,16 +1,17 @@
-// eslint.config.js
-import standard from 'eslint-config-standard-with-typescript'
-import prettier from 'eslint-config-prettier'
-
-export default {
-  extends: [standard, prettier],
-  ignorePatterns: ['node_modules', 'dist'],
+const eslintConfig = {
+  extends: ['standard-with-typescript', 'prettier', 'plugin:jest/recommended'],
+  ignorePatterns: ['node_modules', 'dist', '*.config.js'],
+  plugins: ['node', 'jest'],
   rules: {
+    'no-new': 'off',
     'import/order': [
       'error',
       {
-        alphabetize: { order: 'asc', caseInsensitive: false },
-        orderImportKind: 'asc',
+        alphabetize: {
+          order: 'asc',
+          caseInsensitive: false,
+          orderImportKind: 'asc',
+        },
       },
     ],
     '@typescript-eslint/consistent-type-definitions': ['error', 'type'],
@@ -23,7 +24,20 @@ export default {
     '@typescript-eslint/consistent-type-assertions': 'off',
     'jsx-a11y/anchor-is-valid': 'off',
     curly: ['error', 'all'],
-    'no-irregular-whitespace': ['error', { skipTemplates: true, skipStrings: true }],
-    'no-console': ['error', { allow: ['info', 'error', 'warn'] }],
+    'no-irregular-whitespace': [
+      'error',
+      {
+        skipTemplates: true,
+        skipStrings: true,
+      },
+    ],
+    'node/no-process-env': 'error',
+    'no-restricted-syntax': [
+      'error',
+      {
+        selector: '[object.type=MetaProperty][property.name=env]',
+        message: 'Use instead import { env } from "lib/env"',
+      },
+    ],
   },
 }
