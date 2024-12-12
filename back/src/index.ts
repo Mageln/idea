@@ -1,4 +1,3 @@
-import * as trpcExpress from '@trpc/server/adapters/express'
 import cors from 'cors'
 import express from 'express'
 import { trpcRouter } from './router'

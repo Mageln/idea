@@ -1,12 +1,14 @@
+
 import { Segment } from "../../components/Segment"
 import { Input } from "../../components/Input"
 import { Textarea } from "../../components/Textarea"
 import { useFormik } from "formik"
 import { withZodSchema } from "formik-validator-zod"
-
-
 import { trpc } from "../../lib/trpc"
 import { zCreateIdeaTrpcInput } from "@webapp/back/src/router/createIdea/input"
+
+
+
 
 export const NewIdeaPage = () => {
   const createIdea = trpc.createIdea.useMutation()
