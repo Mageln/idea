@@ -15,7 +15,7 @@ const Layout = () => {
           </li>
           <li className={css.item}>
             <Link className={css.link} to={getNewIdeaRoute()}>
-              New Idea
+              Add Idea
             </Link>
           </li>
         </ul>

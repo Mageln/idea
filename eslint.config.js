@@ -39,5 +39,21 @@ const eslintConfig = {
         message: 'Use instead import { env } from "lib/env"',
       },
     ],
+    '@typescript-eslint/no-restricted-imports': [
+      "error",
+      {
+        patterns:[
+          {
+            group: [
+              "@webapp/back/**",
+              "!@webapp/back/**/",
+              "!@webapp/back/**/input",
+            ],
+            allowTypeImports:true,
+            message:"Only types and input schemas are allowed to be imported from backend",
+          }
+        ]
+      }
+    ]
   },
 }
