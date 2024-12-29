@@ -1,4 +1,4 @@
-@import "./vars.scss";
+@use "./vars.scss";
 @import "../../node_modules/include-media/dist/include-media";
 
 @mixin link($color: $blue, $hoverColor: $red){

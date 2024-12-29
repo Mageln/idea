@@ -23,11 +23,13 @@
     "formik-validator-zod": "^2.0.1",
     "include-media": "^2.0.0",
     "postcss-normalize": "^13.0.1",
+    "date-fns": "^2.30.0",
     "react": "^18.3.1",
     "react-dom": "^18.3.1",
     "react-router-dom": "^7.0.2",
     "reset-css": "^5.0.2",
     "sass": "^1.82.0",
+    "superjson": "^1.13.1",
     "zod": "^3.23.8"
   },
   "devDependencies": {
