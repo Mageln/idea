@@ -6,6 +6,7 @@ import ViewIdeaPage from './pages/ViewIdeaPage'
 import Layout from './components/Layout'
 import './styles/global.scss'
 import { NewIdeaPage } from './pages/NewIdeaPage'
+import { SignUpPage } from './pages/SignUpPage'
 
 const App = () => {
   return (
@@ -16,6 +17,7 @@ const App = () => {
             <Route path={routes.getAllIdeaRoute()} element={<AllIdeasPage />} />
             <Route path={routes.getNewIdeaRoute()} element={<NewIdeaPage/>}/>
             <Route path={routes.getViewIdeaRoute(routes.viewIdeaRouteParams)} element={<ViewIdeaPage />} />
+            <Route path={routes.getSignUpRoute()} element={<SignUpPage/> } />
           </Route>
         </Routes>
       </BrowserRouter>
