@@ -1,39 +1,33 @@
 import { zSignInTrpcInput } from '@webapp/back/src/router/signIn/input'
-import { useFormik } from 'formik'
 import Cookies from "js-cookie"
-import { useState } from 'react'
 import { Alert } from '../../components/Alert'
 import { Button } from '../../components/Button'
 import { FormItems } from '../../components/FormItems'
 import { Input } from '../../components/Input'
 import { Segment } from '../../components/Segment'
 import { trpc } from '../../lib/trpc'
-import { withZodSchema } from 'formik-validator-zod'
+
 import { useNavigate } from 'react-router-dom'
 import { getAllIdeaRoute } from '../../lib/routes'
+import { useForm } from '../../lib/form'
 
 export const SignInPage = () => {
   const navigate = useNavigate()
   const trpcUtils = trpc.useUtils()
-  const [submittingError, setSubmittingError] = useState<string | null>(null)
   const signIn = trpc.signIn.useMutation()
-  const formik = useFormik({
+  const {formik,buttonProps,alertProps} = useForm({
     initialValues: {
       nick: '',
       password: '',
     },
-    validate: withZodSchema(zSignInTrpcInput),
+    validationSchema: zSignInTrpcInput,
     onSubmit: async (values) => {
-      try {
-        setSubmittingError(null)
        const {token} = await signIn.mutateAsync(values)
        Cookies.set("token", token, {expires: 99999})
        void trpcUtils.invalidate()
        navigate(getAllIdeaRoute())
-      } catch (err: any) {
-        setSubmittingError(err.message)
-      }
     },
+    resetOnSuccess:false,
   })
 
   return (
@@ -42,9 +36,8 @@ export const SignInPage = () => {
         <FormItems>
           <Input label="Nick" name="nick" formik={formik} />
           <Input label="Password" name="password" type="password" formik={formik} />
-          {!formik.isValid && !!formik.submitCount && <Alert color="red">Some fields are invalid</Alert>}
-          {submittingError && <Alert color="red">{submittingError}</Alert>}
-          <Button loading={formik.isSubmitting}>Sign In</Button>
+          <Alert {...alertProps}/>
+          <Button {...buttonProps}>Sign In</Button>
         </FormItems>
       </form>
     </Segment>

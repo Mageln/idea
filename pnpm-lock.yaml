@@ -163,6 +163,9 @@ importers:
       js-cookie:
         specifier: ^3.0.5
         version: 3.0.5
+      lodash:
+        specifier: ^4.17.21
+        version: 4.17.21
       postcss-normalize:
         specifier: ^13.0.1
         version: 13.0.1(browserslist@4.24.2)(postcss@8.4.49)
@@ -198,7 +201,7 @@ importers:
         specifier: ^3.0.6
         version: 3.0.6
       '@types/lodash':
-        specifier: ^4.14.198
+        specifier: ^4.17.13
         version: 4.17.13
       '@types/mixpanel-browser':
         specifier: ^2.47.3
